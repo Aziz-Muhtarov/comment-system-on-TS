@@ -4,76 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main-style.css">
-    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./src/css/main-style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
     <title>Comment system module</title>
 </head>
 
 <body>
     <header class="header"></header>
     <aside class="sidebar"></aside>
-    <main>
-        <div class="wrapper">
-            <section class="some-block">
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--small"></div>
-                <div class="some-block__item some-block__item--big"></div>
-            </section>
-
-            <section class="comments">
-                <div class="comments-header">
-                    <div class="comments-header__item comments-header__item-quantity">
-                        <p class="comments-header__item-text">
-                            Комментарии <span class="comments-count">(0)</span>
-                        </p>
-                    </div>
-
-                    <div class="comments-header__item comments-header__item-rating">
-                        <div class="comments-header__dropdown">
-                            <div class="comments-header__dropdown">
-                                <div id="comments-header__dropdown-nav"
-                                    class="comments-header__dropdown-nav comments-titles">
-                                    <p id="triggerBlock" class="comments-header__item-text">По количеству оценок</p>
-                                    <img class="dropdown-arrow" src="./src/assets/icons/Arrow.png" width="20"
-                                        height="20" alt="drop-down list" />
-                                </div>
-
-                                <div id="popupMenu" class="popupMenu">
-                                    <ul class="comments-header__dropdown-container">
-                                        <li class="dropdown__link">По дате</li>
-                                        <li class="dropdown__link">По количеству оценок</li>
-                                        <li class="dropdown__link">По актуальности</li>
-                                        <li class="dropdown__link">По количеству ответов</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="comments-header__item comments-header__item-favourites comments-titles">
-                        <p class="comments-header__item-text">Избранное</p>
-                        <img src="./src/assets/icons/favorite.png" alt="heart" width="24" height="24" />
-                    </div>
-
+    <main class="main"> 
+      <div class="wrapper">
+        <section class="unknown-content">
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--small"></div>
+          <div class="unknown-content__item unknown-content__item--big"></div>
+        </section>
+        <section class="comments">
+          <div class="comments-header">
+            <div class="comments-header__item comments-header__item-quantity">
+              <p class="comments-header__item-text">
+                Комментарии <span class="comments-count">&#40;0&#41;</span>
+              </p>
+            </div>
+            <div class="comments-header__item comments-header__item-rating">
+              <div class="comments-header__dropdown">
+                <div class="comments-header__dropdown-nav">
+                  <p class="comments-header__item-text">По количеству оценок</p>
+                  <img
+                    class="dropdown-arrow"
+                    src="./src/assets/arrow.svg"
+                    alt="drop-down list"
+                    width="24"
+                    height="24"
+                  />
                 </div>
-
-                <div class="comments__container">
-                    <form class="comments__user" style="display: none"></form>
-                </div>
-                <article class="comments__content"></article>
-
-            </section>
-        </div>
+                <ul class="comments-header__dropdown-container">
+                  <li class="dropdown__link">
+                    <div class="dropdown__link-content byDate">
+                      По дате
+                      <img
+                        class="arrow-down"
+                        src="./src/assets/arrow.svg"
+                        alt="drop-down list"
+                        width="20"
+                        height="20"
+                      />
+                      <img
+                        class="arrow-up"
+                        src="./src/assets/arrow.svg"
+                        alt="drop-down list"
+                        width="20"
+                        height="20"
+                      />
+                    </div>
+                  </li>
+                  <li class="dropdown__link">
+                    <div class="dropdown__link-content byNumserOfRating">
+                      По количеству оценок
+                      <img
+                        class="arrow-down"
+                        src="./src/assets/arrow.svg"
+                        alt="drop-down list"
+                        width="20"
+                        height="20"
+                      />
+                      <img
+                        class="arrow-up"
+                        src="./src/assets/arrow.svg"
+                        alt="drop-down list"
+                        width="20"
+                        height="20"
+                      />
+                    </div>
+                  </li>
+                  <li class="dropdown__link">По актуальности</li>
+                  <li class="dropdown__link">По количеству ответов</li>
+                </ul>
+              </div>
+            </div>
+            <div class="comments-header__item comments-header__item-favourites">
+              <p class="comments-header__item-text">Избранное</p>
+              <img
+                src="./src/assets/heart.svg"
+                alt="heart"
+                width="24"
+                height="24"
+              />
+            </div>
+          </div>
+          <div class="comments__container">
+            <form class="comments__user" style="display: none"></form>
+          </div>
+          <article class="comments__content"></article>
+        </section>
+      </div>
     </main>
 
-    <script src="./src/javascript/index.js"></script>
+    <script type="module" src="./src/javascript/index.js"></script>
 </body>
 
 </html>
