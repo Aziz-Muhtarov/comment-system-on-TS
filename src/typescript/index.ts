@@ -1,4 +1,4 @@
-import { Main } from "./main.js";
+import { Main } from "./main";
 
 const main = new Main();
 main.start();
