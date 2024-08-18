@@ -21,7 +21,7 @@ interface RatingObj {
   
     commentsRatingArchive(): void {
       const ratingBlocks = document.querySelectorAll<HTMLElement>(".comments__rating-archive");
-  
+    
       ratingBlocks.forEach((block) => {
         block.children[0].addEventListener(
           "click",
@@ -29,7 +29,7 @@ interface RatingObj {
             let count = 0;
             const target = event.currentTarget as HTMLElement;
             const targetIndexArchive = target.closest<HTMLElement>(".comments__archive")?.dataset.index;
-  
+    
             if (target) count--;
             if (target.parentElement && target.parentElement.parentElement) {
               target.parentElement.parentElement.dataset.rating = String(count);
@@ -37,23 +37,24 @@ interface RatingObj {
               if (targetIndexArchive) {
                 target.parentElement.children[1].textContent = String(this.displayArchive(targetIndexArchive));
               }
-              if (Number(target.parentElement.children[1].textContent) < 0) {
-                target.parentElement.children[1].style.color = "red";
+              const countElement = target.parentElement.children[1] as HTMLElement;
+              if (Number(countElement.textContent) < 0) {
+                countElement.style.color = "red";
               } else {
-                target.parentElement.children[1].style.color = "#8ac540";
+                countElement.style.color = "#8ac540";
               }
             }
           },
           { once: true }
         );
-  
+    
         block.children[2].addEventListener(
           "click",
           (event: Event) => {
             let count = 0;
             const target = event.currentTarget as HTMLElement;
             const targetIndexArchive = target.closest<HTMLElement>(".comments__archive")?.dataset.index;
-  
+    
             if (target) count++;
             if (target.parentElement && target.parentElement.parentElement) {
               target.parentElement.parentElement.dataset.rating = String(count);
@@ -61,10 +62,11 @@ interface RatingObj {
               if (targetIndexArchive) {
                 target.parentElement.children[1].textContent = String(this.displayArchive(targetIndexArchive));
               }
-              if (Number(target.parentElement.children[1].textContent) < 0) {
-                target.parentElement.children[1].style.color = "red";
+              const countElement = target.parentElement.children[1] as HTMLElement;
+              if (Number(countElement.textContent) < 0) {
+                countElement.style.color = "red";
               } else {
-                target.parentElement.children[1].style.color = "#8ac540";
+                countElement.style.color = "#8ac540";
               }
             }
           },
@@ -75,7 +77,7 @@ interface RatingObj {
   
     commentsRatingAnswer(): void {
       const ratingBlocksAnswer = document.querySelectorAll<HTMLElement>(".comments__rating-answer");
-  
+    
       ratingBlocksAnswer.forEach((block) => {
         block.children[0].addEventListener(
           "click",
@@ -83,42 +85,46 @@ interface RatingObj {
             let count = 0;
             const target = event.currentTarget as HTMLElement;
             const targetIndexAnswer = target.closest<HTMLElement>(".comments__answer")?.dataset.index;
-  
+    
             if (target) count--;
             if (target.parentElement && target.parentElement.parentElement) {
               target.parentElement.parentElement.dataset.rating = String(count);
               this.rememberRatingAnswer(event);
               if (targetIndexAnswer) {
-                target.parentElement.children[1].textContent = String(this.displayAnswer(targetIndexAnswer));
-              }
-              if (Number(target.parentElement.children[1].textContent) < 0) {
-                target.parentElement.children[1].style.color = "red";
-              } else {
-                target.parentElement.children[1].style.color = "#8ac540";
+                const countElement = target.parentElement.children[1] as HTMLElement;
+                countElement.textContent = String(this.displayAnswer(targetIndexAnswer));
+    
+                if (Number(countElement.textContent) < 0) {
+                  countElement.style.color = "red";
+                } else {
+                  countElement.style.color = "#8ac540";
+                }
               }
             }
           },
           { once: true }
         );
-  
+    
         block.children[2].addEventListener(
           "click",
           (event: Event) => {
             let count = 0;
             const target = event.currentTarget as HTMLElement;
             const targetIndexAnswer = target.closest<HTMLElement>(".comments__answer")?.dataset.index;
-  
+    
             if (target) count++;
             if (target.parentElement && target.parentElement.parentElement) {
               target.parentElement.parentElement.dataset.rating = String(count);
               this.rememberRatingAnswer(event);
               if (targetIndexAnswer) {
-                target.parentElement.children[1].textContent = String(this.displayAnswer(targetIndexAnswer));
-              }
-              if (Number(target.parentElement.children[1].textContent) < 0) {
-                target.parentElement.children[1].style.color = "red";
-              } else {
-                target.parentElement.children[1].style.color = "#8ac540";
+                const countElement = target.parentElement.children[1] as HTMLElement;
+                countElement.textContent = String(this.displayAnswer(targetIndexAnswer));
+    
+                if (Number(countElement.textContent) < 0) {
+                  countElement.style.color = "red";
+                } else {
+                  countElement.style.color = "#8ac540";
+                }
               }
             }
           },

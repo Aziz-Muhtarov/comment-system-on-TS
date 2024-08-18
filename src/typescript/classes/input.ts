@@ -75,7 +75,7 @@ interface CommentObj {
       this.textarea.style.height = `${this.textarea.scrollHeight}px`;
     }
   
-    private onFocusTextarea(): void {
+    onFocusTextarea(): void {
       for (let i = 0; i < this.commentsFormsElements.length; i++) {
         const element = this.commentsFormsElements[i] as HTMLElement;
         if (element.tagName !== "INPUT" || (element as HTMLInputElement).type !== "checkbox") {

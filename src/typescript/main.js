@@ -1,10 +1,10 @@
-import { Rating } from "./classes/rating";
-import { User } from "./classes/user";
-import { Archive } from "./classes/archive";
-import { Answer } from "./classes/answer";
-import { Utils } from "./classes/utils";
-import { Favorites } from "./classes/favorites";
-import { Input } from "./classes/input";
+import { Rating } from "./classes/rating.js";
+import { User } from "./classes/user.js";
+import { Archive } from "./classes/archive.js";
+import { Answer } from "./classes/answer.js";
+import { Utils } from "./classes/utils.js";
+import { Favorites } from "./classes/favorites.js";
+import { Input } from "./classes/input.js";
 class Main {
     API = "https://randomuser.me/api/";
     users = JSON.parse(localStorage.getItem("users") || "[]");

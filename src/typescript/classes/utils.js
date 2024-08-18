@@ -70,9 +70,10 @@ class Utils {
         this.noSortedByNumserOfRating = document.querySelectorAll(".comments__count");
         this.noSortedByNumserOfRating.forEach((rating) => {
             const parent = rating.parentElement?.parentElement;
-            if (parent) {
+            if (parent && parent instanceof HTMLElement) {
+                const imageElement = parent.children[0];
                 const itemSort = {
-                    src: parent.children[0].src,
+                    src: imageElement.src,
                     name: parent.children[1].textContent || '',
                     date: parent.children[2].textContent || '',
                     text: parent.children[3].textContent || '',

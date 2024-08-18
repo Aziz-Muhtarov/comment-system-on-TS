@@ -28,10 +28,10 @@ class Utils {
   commentCount: Element | null = null;
   noSortedByNumserOfDate: NodeListOf<Element> | undefined;
   byDateButtonsList: Element | null = null;
-  buttonOnAllComents: Element | null = null;
+  buttonOnAllComents: HTMLElement | null = null;
   noSortedByNumserOfRating: NodeListOf<Element> | undefined;
   byRatingButtonsList: Element | null = null;
-  noSortedItems: Element | null = null;
+  noSortedItems: HTMLElement | null = null;
   userSortNextContainer: Element | null = null;
   userSortNext: HTMLElement | null = null;
   userSortNextItems: NodeListOf<Element> | undefined;
@@ -101,9 +101,11 @@ class Utils {
 
     this.noSortedByNumserOfRating.forEach((rating) => {
       const parent = rating.parentElement?.parentElement;
-      if (parent) {
+      if (parent && parent instanceof HTMLElement) {
+        const imageElement = parent.children[0] as HTMLImageElement;
+
         const itemSort: Comment = {
-          src: parent.children[0].src,
+          src: imageElement.src,
           name: parent.children[1].textContent || '',
           date: parent.children[2].textContent || '',
           text: parent.children[3].textContent || '',

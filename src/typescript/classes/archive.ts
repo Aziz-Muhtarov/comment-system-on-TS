@@ -2,7 +2,7 @@ class Archive {
     private main: any;
     private rating: any;
     private userComment: HTMLElement | null;
-    private userNextComment: HTMLElement;
+    private userNextComment: any;
   
     constructor({ main, rating }: { main: any; rating: any }) {
       this.main = main;

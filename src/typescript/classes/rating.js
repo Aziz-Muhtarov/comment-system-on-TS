@@ -18,11 +18,12 @@ class Rating {
                     if (targetIndexArchive) {
                         target.parentElement.children[1].textContent = String(this.displayArchive(targetIndexArchive));
                     }
-                    if (Number(target.parentElement.children[1].textContent) < 0) {
-                        target.parentElement.children[1].style.color = "red";
+                    const countElement = target.parentElement.children[1];
+                    if (Number(countElement.textContent) < 0) {
+                        countElement.style.color = "red";
                     }
                     else {
-                        target.parentElement.children[1].style.color = "#8ac540";
+                        countElement.style.color = "#8ac540";
                     }
                 }
             }, { once: true });
@@ -38,11 +39,12 @@ class Rating {
                     if (targetIndexArchive) {
                         target.parentElement.children[1].textContent = String(this.displayArchive(targetIndexArchive));
                     }
-                    if (Number(target.parentElement.children[1].textContent) < 0) {
-                        target.parentElement.children[1].style.color = "red";
+                    const countElement = target.parentElement.children[1];
+                    if (Number(countElement.textContent) < 0) {
+                        countElement.style.color = "red";
                     }
                     else {
-                        target.parentElement.children[1].style.color = "#8ac540";
+                        countElement.style.color = "#8ac540";
                     }
                 }
             }, { once: true });
@@ -61,13 +63,14 @@ class Rating {
                     target.parentElement.parentElement.dataset.rating = String(count);
                     this.rememberRatingAnswer(event);
                     if (targetIndexAnswer) {
-                        target.parentElement.children[1].textContent = String(this.displayAnswer(targetIndexAnswer));
-                    }
-                    if (Number(target.parentElement.children[1].textContent) < 0) {
-                        target.parentElement.children[1].style.color = "red";
-                    }
-                    else {
-                        target.parentElement.children[1].style.color = "#8ac540";
+                        const countElement = target.parentElement.children[1];
+                        countElement.textContent = String(this.displayAnswer(targetIndexAnswer));
+                        if (Number(countElement.textContent) < 0) {
+                            countElement.style.color = "red";
+                        }
+                        else {
+                            countElement.style.color = "#8ac540";
+                        }
                     }
                 }
             }, { once: true });
@@ -81,13 +84,14 @@ class Rating {
                     target.parentElement.parentElement.dataset.rating = String(count);
                     this.rememberRatingAnswer(event);
                     if (targetIndexAnswer) {
-                        target.parentElement.children[1].textContent = String(this.displayAnswer(targetIndexAnswer));
-                    }
-                    if (Number(target.parentElement.children[1].textContent) < 0) {
-                        target.parentElement.children[1].style.color = "red";
-                    }
-                    else {
-                        target.parentElement.children[1].style.color = "#8ac540";
+                        const countElement = target.parentElement.children[1];
+                        countElement.textContent = String(this.displayAnswer(targetIndexAnswer));
+                        if (Number(countElement.textContent) < 0) {
+                            countElement.style.color = "red";
+                        }
+                        else {
+                            countElement.style.color = "#8ac540";
+                        }
                     }
                 }
             }, { once: true });
