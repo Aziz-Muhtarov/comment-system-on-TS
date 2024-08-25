@@ -32,7 +32,8 @@ class Main {
   public users: UserObj[] = JSON.parse(localStorage.getItem("users") || "[]");
   public comments: Comment[] = JSON.parse(localStorage.getItem("comments") || "[]");
   public answers: AnswerObj[] = JSON.parse(localStorage.getItem("answers") || "[]");
-  public ratings: number[] = JSON.parse(localStorage.getItem("ratings") || "[]");
+  public ratings: RatingObj[] = JSON.parse(localStorage.getItem("ratings") || "[]").map((value: number, index: number) => ({ value, whose: index }));
+
   public answerRatings: number[] = JSON.parse(localStorage.getItem("answerRatings") || "[]");
   public itemsSort: string[] = JSON.parse(localStorage.getItem("itemsSort") || "[]");
   private usersIdx: number = 0;
