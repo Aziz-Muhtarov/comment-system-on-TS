@@ -161,7 +161,7 @@ interface RatingObj {
       return this.calculateRating(this.main.ratings, elem);
     }
   
-    displayRatingAnswer(elem: string): number {
+    displayRatingAnswer(elem: any): number {
       return this.calculateRating(this.main.answerRatings, elem);
     }
   

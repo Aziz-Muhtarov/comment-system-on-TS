@@ -6,6 +6,7 @@ import { Utils } from "./classes/utils.js";
 import { Favorites } from "./classes/favorites.js";
 import { Input } from "./classes/input.js";
 
+
 interface UserObj {
   first: string;
   last: string;
@@ -40,7 +41,7 @@ class Main {
   public answers: AnswerObj[] = JSON.parse(localStorage.getItem("answers") || "[]");
   public ratings: RatingObj[] = JSON.parse(localStorage.getItem("ratings") || "[]").map((value: number, index: number) => ({ value, whose: index }));
 
-  public answerRatings: number[] = JSON.parse(localStorage.getItem("answerRatings") || "[]");
+  public answerRatings: RatingObj[] = JSON.parse(localStorage.getItem("answerRatings") || "[]");
   public itemsSort: string[] = JSON.parse(localStorage.getItem("itemsSort") || "[]");
   private usersIdx: number = 0;
   private maxUsers: number = 10;
@@ -86,8 +87,8 @@ class Main {
     this.user = new User({ main: this });
     this.archive = new Archive({ rating: this.rating, main: this });
     this.answer = new Answer({ rating: this.rating, main: this });
-    this.utils = new Utils({ main: this });
-    this.favorites = new Favorites({ main: this });
+    this.utils = new Utils({ main. this });
+    this.favorites = new Favorites();
   }
 
   renderInput() {
