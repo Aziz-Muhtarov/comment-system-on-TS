@@ -27,6 +27,12 @@ interface AnswerObj {
   authorIdx: string;
 }
 
+interface RatingObj {
+  value: number;
+  whose: number;
+}
+
+
 class Main {
   private API: string = "https://randomuser.me/api/";
   public users: UserObj[] = JSON.parse(localStorage.getItem("users") || "[]");
